@@ -1,13 +1,393 @@
-body {
+/* ===== BASE STYLES ===== */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+}
+
+/* ===== APP CONTAINER ===== */
+.app {
+  max-width: 448px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  min-height: 100vh;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ===== SCREEN BASE ===== */
+.screen {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+/* ===== WELCOME SCREEN ===== */
+.welcome-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 1.5rem 3rem 1.5rem;
+}
+
+.welcome-screen__content {
+  width: 100%;
+}
+
+.welcome-screen__container {
+  width: 100%;
+  max-width: 384px;
+  margin: 0 auto;
+}
+
+.welcome-screen__header {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.welcome-screen__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.welcome-screen__subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1.625;
+}
+
+.welcome-screen__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ===== LOGIN SCREEN ===== */
+.login-screen {
+  padding: 2rem 1.5rem;
+}
+
+.login-screen__container {
+  max-width: 384px;
+  margin: 0 auto;
+}
+
+.login-screen__header {
+  margin-bottom: 2rem;
+}
+
+.login-screen__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.login-screen__subtitle {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* ===== REGISTER SCREEN ===== */
+.register-screen {
+  padding: 2rem 1.5rem;
+}
+
+.register-screen__container {
+  max-width: 384px;
+  margin: 0 auto;
+}
+
+.register-screen__header {
+  margin-bottom: 2rem;
+}
+
+.register-screen__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+/* ===== ACCOUNT SCREEN ===== */
+.account-screen {
+  padding: 2rem 1.5rem;
+}
+
+.account-screen__container {
+  max-width: 384px;
+  margin: 0 auto;
+}
+
+.account-screen__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== PROFILE CARD ===== */
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.profile-card__content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-card__avatar {
+  width: 4rem;
+  height: 4rem;
+  background-color: #d1d5db;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.profile-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-card__info {
+  flex: 1;
+}
+
+.profile-card__name {
+  font-weight: 600;
+  color: #111827;
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+}
+
+.profile-card__email {
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.profile-card__description {
+  margin-top: 1.5rem;
+}
+
+.profile-card__text {
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.625;
+}
+
+/* ===== FORM STYLES ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label {
+  display: block;
+  color: #7c3aed;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form__label--radio {
+  color: #374151;
+  margin-bottom: 0.75rem;
+}
+
+.form__input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  background-color: #ffffff;
+}
+
+.form__input:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+}
+
+.form__input::placeholder {
+  color: #9ca3af;
+}
+
+/* ===== RADIO GROUP ===== */
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.radio-group__option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.radio-group__input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #7c3aed;
+  border: 1px solid #d1d5db;
+  margin: 0;
+}
+
+.radio-group__input:focus {
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+}
+
+.radio-group__label {
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+/* ===== BUTTON STYLES ===== */
+.btn {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn--large {
+  font-size: 1.125rem;
+  padding: 1rem 1.5rem;
+}
+
+.btn--primary {
+  background-color: #7c3aed;
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background-color: #6d28d9;
+}
+
+.btn--secondary {
+  background-color: #ddd6fe;
+  color: #7c3aed;
+}
+
+.btn--secondary:hover {
+  background-color: #c4b5fd;
+}
+
+.btn--disabled {
+  background-color: #9ca3af;
+  color: #ffffff;
+}
+
+.btn--disabled:hover {
+  background-color: #6b7280;
+}
+
+.btn--submit {
+  margin-top: 2rem;
+}
+
+/* ===== NAVIGATION LINK ===== */
+.nav-link {
+  margin-top: 1.5rem;
+  color: #7c3aed;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+}
+
+.nav-link:hover {
+  color: #6d28d9;
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 480px) {
+  .welcome-screen {
+    padding: 0 1rem 2rem 1rem;
+  }
+
+  .login-screen,
+  .register-screen,
+  .account-screen {
+    padding: 1.5rem 1rem;
+  }
+
+  .welcome-screen__title {
+    font-size: 1.5rem;
+  }
+
+  .btn--large {
+    font-size: 1rem;
+    padding: 0.875rem 1.25rem;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.btn:focus,
+.form__input:focus,
+.radio-group__input:focus,
+.nav-link:focus {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn--primary {
+    border: 2px solid #000000;
+  }
+
+  .btn--secondary {
+    border: 2px solid #7c3aed;
+  }
+
+  .form__input {
+    border-width: 2px;
+  }
 }
