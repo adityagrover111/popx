@@ -1,7 +1,23 @@
 import React from "react";
 
 export function RegisterScreen({ onNavigate, formData, onInputChange }) {
+  const isFormValid = () => {
+    const { fullName, phoneNumber, emailAddress, password, isAgency } =
+      formData;
+    return (
+      fullName.trim() !== "" &&
+      phoneNumber.trim() !== "" &&
+      emailAddress.trim() !== "" &&
+      password.trim() !== "" &&
+      (isAgency === "yes" || isAgency === "no")
+    );
+  };
+
   const handleCreateAccount = () => {
+    if (!isFormValid()) {
+      alert("Please fill out all required fields before continuing.");
+      return;
+    }
     onNavigate("account");
   };
 
@@ -17,6 +33,7 @@ export function RegisterScreen({ onNavigate, formData, onInputChange }) {
             <label className="form__label">Full Name*</label>
             <input
               type="text"
+              placeholder="Jane Doe"
               value={formData.fullName}
               onChange={(e) => onInputChange("fullName", e.target.value)}
               className="form__input"
@@ -27,6 +44,7 @@ export function RegisterScreen({ onNavigate, formData, onInputChange }) {
             <label className="form__label">Phone number*</label>
             <input
               type="text"
+              placeholder="+91 12345678"
               value={formData.phoneNumber}
               onChange={(e) => onInputChange("phoneNumber", e.target.value)}
               className="form__input"
@@ -37,6 +55,7 @@ export function RegisterScreen({ onNavigate, formData, onInputChange }) {
             <label className="form__label">Email address*</label>
             <input
               type="email"
+              placeholder="jane@email.com"
               value={formData.emailAddress}
               onChange={(e) => onInputChange("emailAddress", e.target.value)}
               className="form__input"
