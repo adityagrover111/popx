@@ -10,7 +10,9 @@ export function LoginScreen({ onNavigate, formData, onInputChange }) {
       <div className="screen login-screen">
         <div className="login-screen__container">
           <div className="login-screen__header">
-            <h1 className="login-screen__title">Signin to your PopX account</h1>
+            <h1 className="login-screen__title">
+              Sign in to your PopX account
+            </h1>
             <p className="login-screen__subtitle">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>

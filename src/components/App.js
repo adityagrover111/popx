@@ -10,10 +10,10 @@ function App() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    fullName: "Marry Doe",
-    phoneNumber: "Marry Doe",
-    emailAddress: "Marry Doe",
-    companyName: "Marry Doe",
+    fullName: "",
+    phoneNumber: "",
+    emailAddress: "",
+    companyName: "",
     isAgency: "yes",
   });
 
