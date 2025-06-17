@@ -11,7 +11,7 @@ export function AccountScreen({ onNavigate, formData }) {
           <div className="profile-card__content">
             <div className="profile-card__avatar">
               <img
-                src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=100&h=100&fit=crop&crop=face"
+                src="/pfp.avif"
                 alt="Profile"
                 className="profile-card__image"
               />
